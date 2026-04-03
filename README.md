@@ -1,62 +1,34 @@
-# food-delivery-analysis
-SQL analysis of 2784 food delivery orders across 8 Indian cities
+# 🍔 Food Delivery Operations Analysis
 
+## 📌 Project Overview
+SQL-based analysis of 2,784 food delivery orders across 8 Indian cities
+to identify business insights on ordering patterns, delivery performance,
+and customer preferences.
 
--- ================================================
--- FOOD DELIVERY OPERATIONS ANALYSIS
--- Tool: MySQL | Dataset: 2,784 orders | 8 Cities
--- Analyst: Zaid Ansari
--- ================================================
+## 🛠️ Tools Used
+- MySQL (SQL Queries)
+- Excel (Dashboard) - Day 2
+- Tableau (Visualizations) - Day 3
 
-USE food_analysis;
+## 📊 Key Insights
+- Jaipur has the highest average order value at ₹1,003
+- Fast Food is the most ordered cuisine (1,463 orders)
+- Delhi has the fastest average delivery time (47.1 mins)
+- Peak ordering hours are 12 PM (Lunch) and 7 PM (Dinner)
+- Subway is the highest rated restaurant with 4.15 avg rating
 
--- QUERY 1: City-wise Average Order Value
--- Insight: Jaipur has highest avg order value at Rs.1003
-SELECT city, 
-       ROUND(AVG(order_value), 2) AS avg_order_value,
-       COUNT(*) AS total_orders
-FROM food_delivery_data
-GROUP BY city
-ORDER BY avg_order_value DESC;
+## 📁 Files
+| File | Description |
+|------|-------------|
+| food_delivery_analysis.sql | All SQL queries with insights |
+| food_delivery_data.csv | Raw dataset (2,784 rows) |
 
--- QUERY 2: Cuisine-wise Order Volume and Revenue
--- Insight: Fast Food most ordered, Biryani highest avg value
-SELECT cuisine_type,
-       COUNT(*) AS total_orders,
-       ROUND(AVG(order_value), 2) AS avg_order_value
-FROM food_delivery_data
-GROUP BY cuisine_type
-ORDER BY total_orders DESC;
+## 🔍 SQL Queries Covered
+1. City-wise average order value
+2. Cuisine-wise order volume and revenue
+3. Average delivery time by city
+4. Peak ordering hours analysis
+5. Top 10 highest rated restaurants
 
--- QUERY 3: Average Delivery Time by City
--- Insight: Delhi fastest at 47.1 mins average
-SELECT city,
-       ROUND(AVG(delivery_time_mins), 1) AS avg_delivery_time,
-       MIN(delivery_time_mins) AS fastest_delivery,
-       MAX(delivery_time_mins) AS slowest_delivery
-FROM food_delivery_data
-GROUP BY city
-ORDER BY avg_delivery_time ASC;
-
--- QUERY 4: Peak Ordering Hours
--- Insight: 12PM lunch and 7PM dinner are busiest hours
-SELECT HOUR(order_time) AS hour_of_day,
-       COUNT(*) AS total_orders,
-       ROUND(AVG(order_value), 2) AS avg_order_value
-FROM food_delivery_data
-GROUP BY hour_of_day
-ORDER BY total_orders DESC
-LIMIT 10;
-
--- QUERY 5: Top 10 Highest Rated Restaurants
--- Insight: Subway rated highest at 4.15 among 230+ orders
-SELECT restaurant_name,
-       cuisine_type,
-       ROUND(AVG(rating), 2) AS avg_rating,
-       COUNT(*) AS total_orders,
-       ROUND(AVG(order_value), 2) AS avg_order_value
-FROM food_delivery_data
-GROUP BY restaurant_name, cuisine_type
-HAVING total_orders > 50
-ORDER BY avg_rating DESC
-LIMIT 10;
+## 📬 Contact
+**Zaid Ansari** | zaidansari98600@gmail.com
