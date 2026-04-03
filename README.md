@@ -7,8 +7,7 @@ and customer preferences.
 
 ## 🛠️ Tools Used
 - MySQL (SQL Queries)
-- Excel (Dashboard) - Day 2
-- Tableau (Visualizations) - Day 3
+- Tableau (Visualizations) - 
 
 ## 📊 Key Insights
 - Jaipur has the highest average order value at ₹1,003
@@ -32,3 +31,5 @@ and customer preferences.
 
 ## 📬 Contact
 **Zaid Ansari** | zaidansari98600@gmail.com
+## 📊 Live Tableau Dashboard
+👉 [Click here to view live dashboard](https://public.tableau.com/app/profile/zaid.ansari8278/viz/Book1_17752242194910/FoodDeliveryOperationsDashboard)
